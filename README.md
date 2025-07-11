@@ -43,7 +43,7 @@ Abaixo estão alguns prints com exemplo de uso:
 
 3.  **Rode os comandos**
 	`docker-compose up -d` para subir o MongoDB;
-	
+
 	`npm run seed` para criar uma base collection (**charges**) com 1000 registros no banco **ia_testing**;
 	
 4.  **Execute o projeto**
@@ -100,13 +100,17 @@ Abaixo estão alguns prints com exemplo de uso:
 
 2.  **Configure as variáveis de ambiente no backend**  
     Crie um arquivo `.env` com base no `.env.example`:
+	
 	`API_KEY=sua_chave_google_genai` 
 
 3.  **Rode os comandos**
+
 	`docker-compose up -d` para subir o MongoDB;
+
 	`npm run seed` para criar uma base collection (**charges**) com 1000 registros no banco **ia_testing**;
 	
 4.  **Execute o projeto**
+
 	`npm run dev`
 
 ## 🧩 Tecnologias Utilizadas
