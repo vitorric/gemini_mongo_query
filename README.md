@@ -22,12 +22,13 @@ Abaixo estão alguns prints com exemplo de uso:
   <img src="./imgs/example1.jpeg" alt="Exemplo 1" style="max-width:350px; width:100%; border-radius:8px;" />
 </p>
 <p align="center">
-  <img src="./imgs/example2.jpeg" alt="Exemplo 1" style="max-width:350px; width:100%; border-radius:8px;" />
+  <img src="./imgs/example2.jpeg" alt="Exemplo 2" style="max-width:350px; width:100%; border-radius:8px;" />
 </p>
 <p align="center">
-  <img src="./imgs/example3.jpeg" alt="Exemplo 1" style="max-width:350px; width:100%; border-radius:8px;" />
+  <img src="./imgs/example3.jpeg" alt="Exemplo 3" style="max-width:350px; width:100%; border-radius:8px;" />
 </p>
-OBS: **`Como podem ver nesta última imagem, ainda há muitas melhorias que poderiam ser feitas.`**
+
+### OBS: **Como podem ver nesta última imagem, ainda há muitas melhorias que poderiam ser feitas.**
 
 ## ⚙️ Como rodar localmente
 
@@ -37,10 +38,12 @@ OBS: **`Como podem ver nesta última imagem, ainda há muitas melhorias que pode
 
 2.  **Configure as variáveis de ambiente no backend**  
     Crie um arquivo `.env` com base no `.env.example`:
+
 	`API_KEY=sua_chave_google_genai` 
 
 3.  **Rode os comandos**
 	`docker-compose up -d` para subir o MongoDB;
+	
 	`npm run seed` para criar uma base collection (**charges**) com 1000 registros no banco **ia_testing**;
 	
 4.  **Execute o projeto**
