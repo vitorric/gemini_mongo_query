@@ -9,23 +9,13 @@ if (!process.env.API_KEY) {
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export async function generateMongoQuery(question: string): Promise<{ question: string, query: string }> {
-  let bypass = false;
-
-  if (bypass) {
-    return {
-      query: '[{"$match": {"clientDocument" : "470.596.813-10"}}]',
-      question
-    }
-  }
-
   try {
-    // Modelo
     const response: GenerateContentResponse = await ai.models.generateContent({
       model: 'gemini-2.5-flash-preview-04-17',
       contents: question,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION_QUERY(new Date()),
-        temperature: 0, // Lower temperature for more deterministic, code-like output
+        temperature: 0,
       },
     });
 
@@ -34,7 +24,6 @@ export async function generateMongoQuery(question: string): Promise<{ question: 
       throw new Error("Failed to communicate with Gemini API.");
     }
 
-    // Basic cleanup to remove potential markdown fences, just in case.
     let jsonStr = text.replace('```json', '').replace('```', '').trim();
     const fenceRegex = /^```(\w*)?\s*\n?(.*?)\n?\s*```$/;
     const match = jsonStr.match(fenceRegex);

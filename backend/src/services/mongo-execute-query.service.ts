@@ -14,7 +14,6 @@ function convertToDates(obj: any): any {
   if (Array.isArray(obj)) {
     return obj.map(convertToDates);
   } else if (obj && typeof obj === 'object') {
-    // Handle { "$date": "..." }
     if ('$date' in obj && typeof obj['$date'] === 'string') {
       return new Date(obj['$date']);
     }
@@ -22,7 +21,6 @@ function convertToDates(obj: any): any {
     const result: any = {};
     for (const key in obj) {
       const val = obj[key];
-      // If value is ISO string, convert to Date
       if (isISODateString(val)) {
         result[key] = new Date(val);
       } else {
@@ -39,17 +37,16 @@ export async function executeDBQuery({ query, question }: { question: string, qu
     await client.connect()
     console.log('✅ Conectado ao MongoDB')
     const jsonParsedQuery = JSON.parse(query);
-    console.log('➡️ JSON Query: ', JSON.stringify(convertToDates(jsonParsedQuery)))
+
     const finalQuery = convertToDates(jsonParsedQuery);
     const db = client.db(dbName)
     const collection = db.collection(collectionName)
 
     const resultDB = await collection.aggregate(finalQuery).toArray();
-    console.log(resultDB)
+
     return { resultDB, question, query };
   } catch (err) {
-    console.error('❌ Erro ao a query:', err)
-    console.error('❌ Response query:', query)
+    console.error('❌ Response query:', err, query)
   } finally {
     // Fecha a conexão
     await client.close()
