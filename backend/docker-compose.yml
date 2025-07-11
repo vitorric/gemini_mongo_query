@@ -3,13 +3,9 @@ version: '3.8'
 services:
   mongodb:
     image: mongo:6.0
-    container_name: mongodb_zeztra_ai
+    container_name: ia_testing
     ports:
-      - ${MONGO_PORT_AI}:27017
-    environment:
-      MONGO_INITDB_USERNAME: ${MONGO_USER_AI}
-      MONGO_INITDB_PASSWORD: ${MONGO_PWD_AI}
-      MONGO_INITDB_DATABASE: ${MONGO_DB_AI}
+      - 27017:27017
     volumes:
       - mongodb_data:/data/db
 
