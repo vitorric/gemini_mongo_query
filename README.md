@@ -98,9 +98,10 @@ Abaixo estão alguns prints com exemplo de uso:
 
 	`npm install` 
 
-2.  **Configure as variáveis de ambiente no backend**  
+2.  **Configure as variáveis de ambiente no backend**
+
     Crie um arquivo `.env` com base no `.env.example`:
-	
+
 	`API_KEY=sua_chave_google_genai` 
 
 3.  **Rode os comandos**
