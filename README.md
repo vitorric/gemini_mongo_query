@@ -18,10 +18,16 @@ O resultado apresentado em tela é a **query criada** para a consulta dos dados 
 
 Abaixo estão alguns prints com exemplo de uso:
 
-![Descrição da imagem](./imgs/example1.jpeg)
-![Descrição da imagem](./imgs/example2.jpeg)
-![Descrição da imagem](./imgs/example3.jpeg)
-`Como podem ver nesta ultima imagem, ainda há muitas melhorias que poderiam ser feitas.`
+<p align="center">
+  <img src="./imgs/example1.jpeg" alt="Exemplo 1" style="max-width:350px; width:100%; border-radius:8px;" />
+</p>
+<p align="center">
+  <img src="./imgs/example2.jpeg" alt="Exemplo 1" style="max-width:350px; width:100%; border-radius:8px;" />
+</p>
+<p align="center">
+  <img src="./imgs/example3.jpeg" alt="Exemplo 1" style="max-width:350px; width:100%; border-radius:8px;" />
+</p>
+OBS: **`Como podem ver nesta última imagem, ainda há muitas melhorias que poderiam ser feitas.`**
 
 ## ⚙️ Como rodar localmente
 
